@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationCrosshairs, faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import Modal from './Modal'; // Adjust path as needed
+
 
 const NavBar = () => {
   const [modalType, setModalType] = useState(null);
@@ -112,33 +112,12 @@ const NavBar = () => {
               Hospitals
             </a>
           </div>
-          <div className="pharm text-blue-900 font-semibold border-b border-blue-800">
+          <div className="pharm text-blue-900 font-semibold font-sans border-b border-blue-900">
             <a href="/">Pharmacy Franchise</a>
           </div>
         </section>
       </nav>
 
-      {/* Modal Components */}
-      <Modal
-        show={modalType === 'pharmacy'}
-        onClose={handleModalClose}
-        content={<div><h2>Pharmacy Information</h2><p>Details about pharmacy...</p></div>}
-      />
-      <Modal
-        show={modalType === 'labTests'}
-        onClose={handleModalClose}
-        content={<div><h2>Lab Tests Information</h2><p>Details about lab tests...</p></div>}
-      />
-      <Modal
-        show={modalType === 'doctors'}
-        onClose={handleModalClose}
-        content={<div><h2>Doctors Information</h2><p>Details about doctors...</p></div>}
-      />
-      <Modal
-        show={modalType === 'hospitals'}
-        onClose={handleModalClose}
-        content={<div><h2>Hospitals Information</h2><p>Details about hospitals...</p></div>}
-      />
     </>
   );
 };
